@@ -1,24 +1,24 @@
 #Author: Michael Kochka
-#Date: December 1st
-#Description: A makefile that compiles the final project. 
+#Date: November 7th
+#Description: A makefile that compiles lab fours barbarian functions. 
 CXX = g++
 CXXFLAGS = -g
 CXXFLAGS += -Wall
 CXXFLAGS += -pedantic-errors
 CXXFLAGS += -std=c++0x
 
-OBJS = finalMain.o cell.o character.o validation.o space.o monster.o armor.o crossbow.o exit.o gameFlow.o guard.o helmet.o item.o key.o longsword.o object.o player.o 
+OBJS = combatMain.o character.o barbarian.o validation.o createCharacter.o Vampire.o medusa.o harrypotter.o bluemen.o playerTwoQueue.o playerOneQueue.o loserQueue.o 
 
-SRCS =  finalMain.cpp cell.cpp character.cpp validation.cpp space.cpp monster.cpp armor.cpp crossbow.cpp exit.cpp gameFlow.cpp guard.cpp helmet.cpp item.cpp longsword.cpp object.cpp player.cpp
+SRCS =  combatMain.cpp character.cpp barbarian.cpp validation.cpp createCharacter.cpp Vampire.cpp medusa.cpp harrypotter.cpp bluemen.cpp playerTwoQueue.cpp playerOneQueue.cpp loserQueue.cpp
 
-HDRS =  character.hpp cell.hpp validation.hpp space.hpp monster.hpp armor.hpp crossbow.hpp exit.hpp gameFlow.hpp guard.hpp helmet.hpp item.hpp key.hpp longsword.hpp object.hpp player.hpp 
+HDRS =  character.hpp barbarian.hpp validation.hpp createCharacter.hpp Vampire.hpp medusa.hpp harrypotter.hpp bluemen.hpp playerTwoQueue.hpp playerOneQueue.hpp loserQueue.hpp
 
 
-dungeon: ${OBJS} ${HDRS}
-	${CXX} ${CXXFLAGS} ${SRCS} -o  dungeon
+combat: ${OBJS} ${HDRS}
+	${CXX} ${CXXFLAGS} ${SRCS} -o  combat
 
 ${OBJS}: ${SRCS}
 	${CXX} ${CXXFLAGS} -c $(@:.o=.cpp)
 
 clean: 
-	rm *.o dungeon
+	rm *.o combat

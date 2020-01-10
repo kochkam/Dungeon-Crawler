@@ -5,6 +5,21 @@
  ***************************************************************************************************/
 #include "character.hpp"
 
+/************************************************************************************************
+ *                                              Validation ::healCharacter()
+ * Description: creates the character of player ones choice 
+ ************************************************************************************************/
+void Character::healCharacter()
+{
+  int heal = 0;
+
+  heal = strength * .25; //heal .25% of the remaining health of the chracter that won
+
+  strength = heal + strength; 
+
+}
+
+
 /*
       virtual ~Character(){;}
         string getType(){return type;}

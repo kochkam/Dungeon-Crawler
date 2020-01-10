@@ -1,6 +1,6 @@
 /***************************************************************************************************
  ** Author:      Michael Kochka
- ** Date:        12/4/2019
+ ** Date:        11/7/2019
  ** Description: This header file contains prototype functions for the character class. 
  ***************************************************************************************************/
 #ifndef CHARACTER_HPP
@@ -17,8 +17,9 @@ class Character
         int armor; 
         int strength; 
         int attack; 
+        int defense; 
         int damage; 
-        int defense;
+        string name; 
 
     public: 
         virtual ~Character(){;}
@@ -28,6 +29,9 @@ class Character
         int getDefense(){return defense;}
         int getArmor(){return armor;}
         int getDamage(){return damage;}
+        string getName(){return name;}
+        void healCharacter();
+        void setName(string name){this->name = name;}
         virtual void calculateAttack() = 0; 
         virtual void calculateDefense() = 0; 
         virtual void calculateDamage(int attackRoll) = 0; 
